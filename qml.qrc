@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file alias="background">images/background.jpg</file>
+        <file alias="stone">images/blueStone.png</file>
+        <file>Chain.qml</file>
+        <file>Jssnike.js</file>
+        <file alias="head">images/head.png</file>
+    </qresource>
+</RCC>
