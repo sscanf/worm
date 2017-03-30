@@ -1,6 +1,7 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
+import QtQuick 2.5
+import QtQuick.Controls 1.4
 import "Jssnike.js" as JsSnike
+import FPS 1.0
 
 ApplicationWindow {
 
@@ -17,6 +18,7 @@ ApplicationWindow {
         JsSnike.newGame(10);
     }
 
+
     Item {
         width : parent.width
         height: parent.height
@@ -27,10 +29,28 @@ ApplicationWindow {
             source      : "background"
             fillMode    : Image.PreserveAspectCrop
         }
+
+        FPSText{
+            id: fps_text
+            x:0
+            y: 0;
+            width: 200
+            height: 40
+            Text {
+                color: "white"
+                font.pixelSize: 40
+                anchors.centerIn: parent
+                text: fps_text.fps.toFixed(2) + " FPS"
+            }
+        }
         MouseArea {
             anchors.fill   : parent;
             acceptedButtons: Qt.LeftButton | Qt.RightButton
             hoverEnabled   : true
+
+            onClicked: {
+                JsSnike.newChain();
+            }
 
             onPositionChanged: {
                 mX = mouse.x;

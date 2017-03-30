@@ -2,7 +2,8 @@ QT += qml quick
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    fpstext.cpp
 
 RESOURCES += qml.qrc
 
@@ -25,5 +26,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
+else: unix:!android: target.path = /home/game/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    fpstext.h
